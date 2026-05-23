@@ -91,10 +91,21 @@ export default function BookManagement() {
       setOpen(false);
       setEditing(null);
       alert('Book saved successfully');
-    } catch (err) {
-      console.error('save failed', err);
-      alert('Save failed');
-    }
+    } catch (err: any) {
+  console.error('save failed');
+
+  console.log('STATUS =>', err.response?.status);
+
+  console.log('DATA =>', err.response?.data);
+
+  console.log('ERROR =>', err);
+
+  alert(
+    typeof err.response?.data === 'string'
+      ? err.response.data
+      : JSON.stringify(err.response?.data, null, 2)
+  );
+}
   };
 
   const handleDelete = async (id: number | string) => {
