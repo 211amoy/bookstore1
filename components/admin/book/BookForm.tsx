@@ -47,19 +47,20 @@ export default function BookForm({
   const [pdfFile, setPdfFile] = useState<File | null>(null);
 
   useEffect(() => {
-    if (initial) {
-      setTitle(initial.title ?? '');
-      setPublisher(initial.publisher ?? '');
-      setPublicationDate(
-        initial.publicationDate ?? new Date().toISOString().slice(0, 10)
-      );
-      setDescription(initial.description ?? '');
-      setCategoryId(initial.categoryId ?? 0);
-      setAuthorId(initial.authorId ?? 0);
-    }
-  }, [initial]);
+  if (initial) {
+    setTitle(initial.title ?? '');
+    setPublisher(initial.publisher ?? '');
+    setPublicationDate(
+      initial.publicationDate ?? getYesterday()
+    );
+    setDescription(initial.description ?? '');
+    setCategoryId(initial.categoryId ?? 0);
+    setAuthorId(initial.authorId ?? 0);
+  }
+}, [initial]);
   
-const getYesterday = () => {
+  
+  const getYesterday = () => {
   const date = new Date();
 
   date.setDate(date.getDate() - 1);
@@ -71,27 +72,32 @@ const getYesterday = () => {
     .slice(0, 10);
 };
 
+const [publicationDate, setPublicationDate] = useState(
+  initial?.publicationDate ?? getYesterday()
+);
+  
+
   const submit = () => {
-    if (!title.trim()) {
-      alert('Title is required');
-      return;
-    }
-    if (!publisher.trim()) {
-      alert('Publisher is required');
-      return;
-    }
-    if (!publicationDate) {
-      alert('Publication date is required');
-      return;
-    }
-    if (categoryId === 0) {
-      alert('Select category');
-      return;
-    }
-    if (authorId === 0) {
-      alert('Select author');
-      return;
-    }
+    // if (!title.trim()) {
+    //   alert('Title is required');
+    //   return;
+    // }
+    // if (!publisher.trim()) {
+    //   alert('Publisher is required');
+    //   return;
+    // }
+    // if (!publicationDate) {
+    //   alert('Publication date is required');
+    //   return;
+    // }
+    // if (categoryId === 0) {
+    //   alert('Select category');
+    //   return;
+    // }
+    // if (authorId === 0) {
+    //   alert('Select author');
+    //   return;
+    // }
 
     const payload: BookRequestDTO = {
       title: title.trim(),
