@@ -59,27 +59,27 @@ export default function BookForm({
     }
   }, [initial]);
 
-  const submit = () => {
-    if (!title.trim()) {
-      alert('Title is required');
-      return;
-    }
-    if (!publisher.trim()) {
-      alert('Publisher is required');
-      return;
-    }
-    if (!publicationDate) {
-      alert('Publication date is required');
-      return;
-    }
-    if (categoryId === 0) {
-      alert('Select category');
-      return;
-    }
-    if (authorId === 0) {
-      alert('Select author');
-      return;
-    }
+  // const submit = () => {
+  //   if (!title.trim()) {
+  //     alert('Title is required');
+  //     return;
+  //   }
+  //   if (!publisher.trim()) {
+  //     alert('Publisher is required');
+  //     return;
+  //   }
+  //   if (!publicationDate) {
+  //     alert('Publication date is required');
+  //     return;
+  //   }
+  //   if (categoryId === 0) {
+  //     alert('Select category');
+  //     return;
+  //   }
+  //   if (authorId === 0) {
+  //     alert('Select author');
+  //     return;
+  //   }
 
     const payload: BookRequestDTO = {
       title: title.trim(),
