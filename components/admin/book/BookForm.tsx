@@ -33,7 +33,8 @@ export default function BookForm({
   onNext,
   onCancel,
 }: Props) {
-  // 昨天日期（避免时区导致日期偏移）
+
+  // 获取昨天日期
   const getYesterday = () => {
     const date = new Date();
 
@@ -52,40 +53,54 @@ export default function BookForm({
     initial?.publisher ?? ''
   );
 
-  const [publicationDate, setPublicationDate] = useState(
-    initial?.publicationDate ?? getYesterday()
-  );
+  // 默认昨天；编辑时使用原值
+  const [publicationDate, setPublicationDate] =
+    useState(
+      initial?.publicationDate ?? getYesterday()
+    );
 
   const [description, setDescription] = useState(
     initial?.description ?? ''
   );
 
-  const [categoryId, setCategoryId] = useState<number>(
-    initial?.categoryId ?? 0
-  );
+  const [categoryId, setCategoryId] =
+    useState<number>(
+      initial?.categoryId ?? 0
+    );
 
-  const [authorId, setAuthorId] = useState<number>(
-    initial?.authorId ?? 0
-  );
+  const [authorId, setAuthorId] =
+    useState<number>(
+      initial?.authorId ?? 0
+    );
 
-  const [coverFile, setCoverFile] = useState<File | null>(
-    null
-  );
+  const [coverFile, setCoverFile] =
+    useState<File | null>(null);
 
-  const [pdfFile, setPdfFile] = useState<File | null>(
-    null
-  );
+  const [pdfFile, setPdfFile] =
+    useState<File | null>(null);
 
   useEffect(() => {
     if (initial) {
       setTitle(initial.title ?? '');
       setPublisher(initial.publisher ?? '');
+
+      // 编辑时保留原日期
       setPublicationDate(
-        initial.publicationDate ?? getYesterday()
+        initial.publicationDate ??
+          getYesterday()
       );
-      setDescription(initial.description ?? '');
-      setCategoryId(initial.categoryId ?? 0);
-      setAuthorId(initial.authorId ?? 0);
+
+      setDescription(
+        initial.description ?? ''
+      );
+
+      setCategoryId(
+        initial.categoryId ?? 0
+      );
+
+      setAuthorId(
+        initial.authorId ?? 0
+      );
     }
   }, [initial]);
 
@@ -109,8 +124,12 @@ export default function BookForm({
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
+
         <div>
-          <Label htmlFor="title" className="mb-2">
+          <Label
+            htmlFor="title"
+            className="mb-2"
+          >
             Title
           </Label>
 
@@ -135,16 +154,20 @@ export default function BookForm({
           <Input
             id="publicationDate"
             type="date"
-            max={getYesterday()}
             value={publicationDate}
+            max={getYesterday()}
             onChange={(e) =>
-              setPublicationDate(e.target.value)
+              setPublicationDate(
+                e.target.value
+              )
             }
           />
         </div>
+
       </div>
 
       <div className="grid grid-cols-2 gap-4">
+
         <div>
           <Label className="mb-2">
             Author
@@ -208,6 +231,7 @@ export default function BookForm({
             </SelectContent>
           </Select>
         </div>
+
       </div>
 
       <div>
@@ -248,6 +272,7 @@ export default function BookForm({
       </div>
 
       <div className="grid grid-cols-2 gap-4">
+
         <div>
           <Label
             htmlFor="coverFile"
@@ -287,6 +312,7 @@ export default function BookForm({
             }
           />
         </div>
+
       </div>
 
       <div className="flex justify-end gap-2 pt-2">
