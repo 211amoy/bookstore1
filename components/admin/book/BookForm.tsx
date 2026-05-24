@@ -59,7 +59,7 @@ export default function BookForm({
     }
   }, [initial]);
 
-  // const submit = () => {
+   const submit = () => {
   //   if (!title.trim()) {
   //     alert('Title is required');
   //     return;
