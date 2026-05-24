@@ -58,28 +58,40 @@ export default function BookForm({
       setAuthorId(initial.authorId ?? 0);
     }
   }, [initial]);
+  
+const getYesterday = () => {
+  const date = new Date();
 
-   const submit = () => {
-  //   if (!title.trim()) {
-  //     alert('Title is required');
-  //     return;
-  //   }
-  //   if (!publisher.trim()) {
-  //     alert('Publisher is required');
-  //     return;
-  //   }
-  //   if (!publicationDate) {
-  //     alert('Publication date is required');
-  //     return;
-  //   }
-  //   if (categoryId === 0) {
-  //     alert('Select category');
-  //     return;
-  //   }
-  //   if (authorId === 0) {
-  //     alert('Select author');
-  //     return;
-  //   }
+  date.setDate(date.getDate() - 1);
+
+  return new Date(
+    date.getTime() - date.getTimezoneOffset() * 60000
+  )
+    .toISOString()
+    .slice(0, 10);
+};
+
+  const submit = () => {
+    if (!title.trim()) {
+      alert('Title is required');
+      return;
+    }
+    if (!publisher.trim()) {
+      alert('Publisher is required');
+      return;
+    }
+    if (!publicationDate) {
+      alert('Publication date is required');
+      return;
+    }
+    if (categoryId === 0) {
+      alert('Select category');
+      return;
+    }
+    if (authorId === 0) {
+      alert('Select author');
+      return;
+    }
 
     const payload: BookRequestDTO = {
       title: title.trim(),
@@ -112,6 +124,7 @@ export default function BookForm({
           </Label>
           <Input
             id="publicationDate"
+            max={getYesterday()}
             type="date"
             value={publicationDate}
             onChange={(e) => setPublicationDate(e.target.value)}
