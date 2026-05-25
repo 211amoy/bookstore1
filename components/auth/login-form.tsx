@@ -110,12 +110,9 @@ export function LoginForm({
                 Demo accounts:
               </p>
               <p className="text-xs">
-                <strong>User:</strong> user@example.com
+                <strong>User:</strong> user
               </p>
-              <p className="text-xs">
-                <strong>Admin:</strong> admin@example.com
-              </p>
-              <p className="text-xs">Password: demo1234</p>
+                          <p className="text-xs">Password: demo1234</p>
             </div>
           </div>
         </CardContent>
