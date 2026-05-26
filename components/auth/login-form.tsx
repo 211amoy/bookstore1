@@ -80,7 +80,7 @@ export function LoginForm({
 
           <div>
             <CardTitle className="text-2xl font-bold">
-              欢迎回来
+              欢迎访问电子图书商城
             </CardTitle>
 
             <CardDescription className="text-muted-foreground">
