@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { BookOpen } from 'lucide-react';
 import { User } from '@/app/page';
-import qrcode from './qrcode.jpg';
+
 interface LoginFormProps {
   onLogin: (email: string, password: string) => Promise<any>;
   onSwitchToRegister: () => void;
@@ -162,11 +162,12 @@ export function LoginForm({
     wangwensai@hotmail.com
   </a>
 </p>  <p>
-              <img
-  src={qrcode}
+           <Image
+  src="/qrcode.jpg"
   alt="BookStore"
-  className="w-[300px] h-[500px] object-contain rounded-xl shadow-md"
-
+  width={300}
+  height={500}
+  className="object-contain rounded-xl shadow-md"
 /></p>
             </div>
           </form>
