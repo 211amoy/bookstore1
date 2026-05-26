@@ -37,8 +37,8 @@ export function BookGrid({
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h2 className="text-2xl font-bold mb-2">
         {searchQuery || selectedCategory !== 'All' || selectedAuthor !== 'All'
-          ? '搜索结果'
-          : '所有图书'}
+          ? 'Search Results'
+          : 'All Books'}
       </h2>
       <p className="text-muted-foreground mb-6">
         {books.length} book{books.length !== 1 ? 's' : ''} found
@@ -47,9 +47,9 @@ export function BookGrid({
       {books.length === 0 ? (
         <div className="text-center py-12">
           <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-          <h3 className="text-lg font-medium mb-2">没有图书被发现</h3>
+          <h3 className="text-lg font-medium mb-2">No books found</h3>
           <p className="text-muted-foreground">
-            尝试调整您的搜索
+            Try adjusting your search or filters
           </p>
         </div>
       ) : (
@@ -76,7 +76,7 @@ export function BookGrid({
                   <CardDescription className="text-sm text-muted-foreground">
                     by{' '}
                     {authors.find((aut) => aut.id === book.authorId)?.name ??
-                      '不明作者'}{' '}
+                      'Unknown Author'}{' '}
                     • {book.publicationDate}
                   </CardDescription>
                 </div>
