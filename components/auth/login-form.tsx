@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Image from 'next/image';
 
 import {
   Card,
@@ -152,24 +153,36 @@ export function LoginForm({
             </Button>
 
             {/* Image below button */}
-            <div className="mt-4 flex justify-center">扫码付款两元后邮件或微信通知(注明微信号)，可以下载任意图书。
-            <p>
-  Email:
-  <a
-    href="mailto:wangwensai@hotmail.com"
-    className="text-blue-500 hover:underline ml-1"
-  >
-    wangwensai@hotmail.com
-  </a>
-</p>  <p>
-           <Image
-  src="/qrcode.jpg"
-  alt="BookStore"
-  width={300}
-  height={500}
-  className="object-contain rounded-xl shadow-md"
-/></p>
-            </div>
+            <div className="mt-6 text-center">
+
+  {/* Description */}
+  <p className="text-sm leading-7 text-left">
+    扫码付款两元后邮或微信通知(注明微信号)，
+    可以下载任意图书。
+  </p>
+
+  {/* Email */}
+  <div className="mt-2">
+    <a
+      href="mailto:wangwensai@hotmail.com"
+      className="text-blue-600 hover:underline"
+    >
+      Email: wangwensai@hotmail.com
+    </a>
+  </div>
+
+  {/* QR Code */}
+  <div className="mt-4 flex justify-center">
+    <Image
+      src="/qrcode.jpg"
+      alt="QR Code"
+      width={200}
+      height={300}
+      className="rounded-lg shadow-md"
+    />
+  </div>
+
+</div>
           </form>
         </CardContent>
       </Card>
