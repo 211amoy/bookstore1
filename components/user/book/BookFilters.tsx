@@ -38,7 +38,7 @@ export function BookFilters({
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
-              placeholder="Search books, authors, or descriptions..."
+              placeholder="搜索图书，作者或描述......"
               value={searchQuery}
               onChange={(e) => onSearch(e.target.value)}
               className="pl-10"
@@ -50,7 +50,7 @@ export function BookFilters({
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="All">All</SelectItem>
+                <SelectItem value="All">全部</SelectItem>
                 {categories.map((category) => (
                   <SelectItem key={category.id} value={category.name}>
                     {category.name}
@@ -63,7 +63,7 @@ export function BookFilters({
                 <SelectValue placeholder="Author" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="All">All</SelectItem>
+                <SelectItem value="All">全部</SelectItem>
                 {authors.map((author) => (
                   <SelectItem key={author.id} value={author.name}>
                     {author.name}
