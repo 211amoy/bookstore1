@@ -156,7 +156,7 @@ export function LoginForm({
             <div className="mt-6 text-center">
 
   {/* Description */}
-  <p alien className="text-sm leading-7 text-left">
+  <p alien className="text-sm leading-7 text-center">
     扫码付款两元后邮或微信通知(注明微信号)，会得到账号和密码
     可以下载任意图书。
   </p>
