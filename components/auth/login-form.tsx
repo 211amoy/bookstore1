@@ -157,7 +157,7 @@ export function LoginForm({
 
   {/* Description */}
   <p style="text-align: center;" alien className="text-sm leading-7 text-left">
-    扫码付款两元后邮或微信通知(注明微信号)，
+    扫码付款两元后邮或微信通知(注明微信号)，会得到账号和密码
     可以下载任意图书。
   </p>
 
