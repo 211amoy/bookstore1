@@ -80,11 +80,11 @@ export function LoginForm({
 
           <div>
             <CardTitle className="text-2xl font-bold">
-              欢迎访问电子图书商城
+              Welcome Back
             </CardTitle>
 
             <CardDescription className="text-muted-foreground">
-             请登录您的账号
+              Sign in to your BookStore account
             </CardDescription>
           </div>
         </CardHeader>
@@ -97,13 +97,13 @@ export function LoginForm({
             {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email">
-                电子邮件
+                Email
               </Label>
 
               <Input
                 id="email"
                 type="email"
-                placeholder="输入您的电子邮件"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) =>
                   setEmail(
@@ -117,13 +117,13 @@ export function LoginForm({
             {/* Password */}
             <div className="space-y-2">
               <Label htmlFor="password">
-                密码
+                Password
               </Label>
 
               <Input
                 id="password"
                 type="password"
-                placeholder="输入您的密码"
+                placeholder="Enter your password"
                 value={password}
                 onChange={(e) =>
                   setPassword(
@@ -148,16 +148,16 @@ export function LoginForm({
               disabled={isLoading}
             >
               {isLoading
-                ? '正在登录...'
-                : '登录'}
+                ? 'Signing in...'
+                : 'Sign In'}
             </Button>
 
             {/* Image below button */}
             <div className="mt-6 text-center">
 
   {/* Description */}
-  <p style="text-align: center;" alien className="text-sm leading-7 text-left">
-    扫码付款两元后邮或微信通知(注明微信号)，会得到账号和密码
+  <p className="text-sm leading-7 text-left">
+    扫码付款两元后邮或微信通知(注明微信号)，
     可以下载任意图书。
   </p>
 
