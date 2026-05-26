@@ -97,13 +97,13 @@ export function LoginForm({
             {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email">
-                电子邮件
+                账号
               </Label>
 
               <Input
                 id="email"
                 type="email"
-                placeholder="输入您的电子邮件"
+                placeholder="输入您的账号"
                 value={email}
                 onChange={(e) =>
                   setEmail(
