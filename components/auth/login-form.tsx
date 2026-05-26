@@ -174,7 +174,7 @@ export function LoginForm({
   {/* QR Code */}
   <div className="mt-4 flex justify-center">
     <Image
-      src="/qrcode.jpg"
+      src="/qrcode1.jpg"
       alt="QR Code"
       width={300}
       height={400}
