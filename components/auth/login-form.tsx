@@ -163,7 +163,7 @@ export function LoginForm({
   </a>
 </p>
               <img
-                 src=./qrcode.jpg
+                 src="./qrcode.jpg"
                 alt="BookStore"
                 className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
               />
