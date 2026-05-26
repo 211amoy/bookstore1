@@ -161,12 +161,13 @@ export function LoginForm({
   >
     wangwensai@hotmail.com
   </a>
-</p>
+</p>  <p>
               <img
   src={qrcode}
   alt="BookStore"
-  className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
-/>
+  className="w-[300px] h-[500px] object-contain rounded-xl shadow-md"
+
+/></p>
             </div>
           </form>
         </CardContent>
