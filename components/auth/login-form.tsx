@@ -176,8 +176,8 @@ export function LoginForm({
     <Image
       src="/qrcode.jpg"
       alt="QR Code"
-      width={200}
-      height={300}
+      width={300}
+      height={400}
       className="rounded-lg shadow-md"
     />
   </div>
