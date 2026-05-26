@@ -153,9 +153,17 @@ export function LoginForm({
 
             {/* Image below button */}
             <div className="mt-4 flex justify-center">扫码付款两元后邮件或微信通知(注明微信号)，可以下载任意图书。
-            Email:wangwensai@hotmail.com
+            <p>
+  Email:
+  <a
+    href="mailto:wangwensai@hotmail.com"
+    className="text-blue-500 hover:underline ml-1"
+  >
+    wangwensai@hotmail.com
+  </a>
+</p>
               <img
-                 src={qrcode}
+                 src=./qrcode.jpg
                 alt="BookStore"
                 className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
               />
