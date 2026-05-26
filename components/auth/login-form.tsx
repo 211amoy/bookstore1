@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import qrcode from './qrcode.jpg';
+
 import {
   Card,
   CardContent,
@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { BookOpen } from 'lucide-react';
 import { User } from '@/app/page';
-
+import qrcode from './qrcode.jpg';
 interface LoginFormProps {
   onLogin: (email: string, password: string) => Promise<any>;
   onSwitchToRegister: () => void;
@@ -163,10 +163,10 @@ export function LoginForm({
   </a>
 </p>
               <img
-                 src="./qrcode.jpg"
-                alt="BookStore"
-                className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
-              />
+  src={qrcode}
+  alt="BookStore"
+  className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
+/>
             </div>
           </form>
         </CardContent>
