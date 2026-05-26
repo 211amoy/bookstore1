@@ -21,7 +21,6 @@ interface LoginFormProps {
 
 export function LoginForm({
   onLogin,
-  onSwitchToRegister,
   setUser,
   loadCurrUser,
 }: LoginFormProps) {
@@ -30,19 +29,36 @@ export function LoginForm({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (
+    e: React.FormEvent
+  ) => {
     e.preventDefault();
+
     if (!email || !password) {
       setError('Please fill in all fields');
       return;
     }
+
     setIsLoading(true);
     setError('');
+
     try {
-      const response = await onLogin(email, password);
+      const response = await onLogin(
+        email,
+        password
+      );
+
       if (response.status) {
-        localStorage.setItem('jwt-token', response.data.jwtToken);
-        const user: User = await loadCurrUser(response.data.jwtToken);
+        localStorage.setItem(
+          'jwt-token',
+          response.data.jwtToken
+        );
+
+        const user: User =
+          await loadCurrUser(
+            response.data.jwtToken
+          );
+
         setUser(user);
       }
     } catch (err) {
@@ -53,53 +69,96 @@ export function LoginForm({
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center space-y-4">
           <div className="mx-auto w-12 h-12 bg-primary rounded-full flex items-center justify-center">
             <BookOpen className="w-6 h-6 text-primary-foreground" />
           </div>
+
           <div>
-            <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
+            <CardTitle className="text-2xl font-bold">
+              Welcome Back
+            </CardTitle>
+
             <CardDescription className="text-muted-foreground">
               Sign in to your BookStore account
             </CardDescription>
           </div>
         </CardHeader>
+
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4"
+          >
+            {/* Email */}
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">
+                Email
+              </Label>
+
               <Input
                 id="email"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) =>
+                  setEmail(
+                    e.target.value
+                  )
+                }
                 disabled={isLoading}
               />
             </div>
+
+            {/* Password */}
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">
+                Password
+              </Label>
+
               <Input
                 id="password"
                 type="password"
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) =>
+                  setPassword(
+                    e.target.value
+                  )
+                }
                 disabled={isLoading}
               />
             </div>
-            {error && <p className="text-sm text-destructive">{error}</p>}
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Signing in...' : 'Sign In'}
+
+            {/* Error */}
+            {error && (
+              <p className="text-sm text-destructive">
+                {error}
+              </p>
+            )}
+
+            {/* Sign In Button */}
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={isLoading}
+            >
+              {isLoading
+                ? 'Signing in...'
+                : 'Sign In'}
             </Button>
+
+            {/* Image below button */}
+            <div className="mt-4 flex justify-center">
+              <img
+                src="/images/login.jpg"
+                alt="BookStore"
+                className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
+              />
+            </div>
           </form>
-          <div className="mt-6 text-center">
-         
-            <div className="mt-4 p-3 bg-muted rounded-lg">
-             
-          </div>
         </CardContent>
       </Card>
     </div>
