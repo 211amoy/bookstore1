@@ -96,23 +96,10 @@ export function LoginForm({
             </Button>
           </form>
           <div className="mt-6 text-center">
-            <p className="text-sm text-muted-foreground">
-              Don't have an account?{' '}
-              <button
-                onClick={onSwitchToRegister}
-                className="text-primary hover:underline font-medium"
-              >
-                Register here
-              </button>
-            </p>
+           
+            <img src="qrcode.jpg">
             <div className="mt-4 p-3 bg-muted rounded-lg">
-              <p className="text-xs text-muted-foreground mb-2">
-                Demo accounts:
-              </p>
-              <p className="text-xs">
-                <strong>User:</strong> user
-              </p>
-                          <p className="text-xs">Password: demo1234</p>
+          
             </div>
           </div>
         </CardContent>
