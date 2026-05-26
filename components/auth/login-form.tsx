@@ -153,7 +153,7 @@ export function LoginForm({
             {/* Image below button */}
             <div className="mt-4 flex justify-center">
               <img
-                src="/images/login.jpg"
+                src="qrcode.jpg"
                 alt="BookStore"
                 className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
               />
