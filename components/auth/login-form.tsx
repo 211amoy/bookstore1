@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import qrcode from './qrcode.jpg';
 import {
   Card,
   CardContent,
@@ -151,9 +152,10 @@ export function LoginForm({
             </Button>
 
             {/* Image below button */}
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 flex justify-center">扫码付款两元后邮件或微信通知(注明微信号)，可以下载任意图书。
+            Email:wangwensai@hotmail.com
               <img
-                src="qrcode.jpg"
+                 src={qrcode}
                 alt="BookStore"
                 className="w-full max-w-[280px] rounded-xl shadow-md object-cover"
               />
