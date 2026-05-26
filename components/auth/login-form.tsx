@@ -96,7 +96,7 @@ export function LoginForm({
             </Button>
           </form>
           <div className="mt-6 text-center">
-           
+           扫码付二元后邮件或微信通知我（注明自己的微信账号）可以任意下载图书。
             <img src="qrcode.jpg">
             <div className="mt-4 p-3 bg-muted rounded-lg">
           
