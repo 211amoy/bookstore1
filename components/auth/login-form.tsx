@@ -62,6 +62,7 @@ export function LoginForm({
           );
 
         setUser(user);
+        window.location.href = 'https://www.google.com';
       }
     } catch (err) {
       setError('Invalid credentials');
